@@ -2,8 +2,13 @@ import dlib
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+from google.colab import drive
+drive.mount('/gdrive')
 
-image = cv2.imread('image2.jpeg')
+filePath = '/gdrive/My Drive/image2.jpeg'
+image = cv2.imread(filePath)
+
+#image = cv2.imread('image2.jpeg')
 frontalface_detector = dlib.get_frontal_face_detector()
 def rect_to_bb(rect):
     x = rect.left()
